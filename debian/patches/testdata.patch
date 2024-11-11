@@ -1,0 +1,18 @@
+Last-Update: 2018-02-16
+Forwarded: no
+Author: Dmitry Smirnov <onlyjob@member.fsf.org>
+Description: adjust path to data files to fix tests.
+
+--- a/charset/file.go
++++ b/charset/file.go
+@@ -20,9 +20,9 @@
+ 
+ // CharsetDir gives the location of the default data file directory.
+ // This directory will be used for files with names that have not
+ // been registered with RegisterDataFile.
+-var CharsetDir = "/usr/local/lib/go-charset/datafiles"
++var CharsetDir = "../../datafiles"
+ 
+ func readFile(name string) (data []byte, err error) {
+ 	var r io.ReadCloser
+ 	if open := files[name]; open != nil {
